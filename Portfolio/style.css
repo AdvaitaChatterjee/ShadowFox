@@ -1,0 +1,792 @@
+body{
+    background-color: #121212;
+    margin: 0; /* Ensure no default body margin */
+    overflow-x: hidden; /* Prevent horizontal scrollbar on smaller screens */
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #383838 #1e1e1e;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+header{
+    height: 3em;
+}
+
+/* Initial state */
+.heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10em;
+    color: antiquewhite;
+    transition: all 1s ease-in-out;
+    font-weight: 900;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    white-space: nowrap; /* Prevent text from wrapping initially */
+}
+
+.heading-small {
+    top: 0.5em;
+    left: 1em;
+    transform: translate(0, 0);
+    font-size: 2em;
+}
+
+main{
+    width: 100vw;
+}
+
+.section-1{
+    width: 100vw;
+    height: 33em;
+    display: flex;
+    flex-direction: row;
+    background-image: url("img4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    padding-top: 50px; /* Add padding to prevent content from being hidden behind fixed header */
+}
+
+.nav-area{
+    perspective: 700px;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 120px 120px 120px;
+    font-weight: 900;
+    flex: 1; /* Allow nav-area to take available space */
+}
+
+.nav-content{
+    width: 45vw;
+    position: relative;
+    left:2.2em;
+    top:0.6em;
+    font-size: 4em;
+    font-family: sans-serif;
+    transform-origin: left;
+    text-decoration: none;
+    color: rgb(109, 101, 101);
+    transition: font-size 0.3s ease-in-out;
+    text-shadow: 2px 2px rgb(255, 255, 255);
+}
+
+.nav-content:hover{
+    font-size: 4.3em;
+}
+
+.intro{
+    width: 50vw;
+    display: grid;
+    grid-template-rows: 120px 140px;
+    position: relative;
+    top:1.35em;
+    left:1em;
+    font-size: 2.5em;
+    font-weight: 900;
+    transform: scaleX(1.1);
+    flex: 1; /* Allow intro to take available space */
+}
+
+.intro-content{
+    color: rgb(230, 204, 204);
+    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+}
+
+#first-name{
+    font-size: 2.8em;
+}
+
+#last-name{
+    font-size: 1.88em;
+}
+
+#designation{
+    font-size: 1em;
+}
+
+.section-2{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    padding: 1em; /* Add padding for overall section */
+}
+
+.about-me-left{
+    width:60vw;
+    padding-right: 1em; /* Add some space between text and image */
+}
+
+.about-me-heading{
+    display: flex;
+    justify-content: center;
+    font-size: 3.5em;
+    color: rgb(216, 213, 213);;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 0.5em; /* Space below heading */
+}
+
+.para-area{
+    text-align: justify;
+    margin: 0em 0em 2em 1em;
+}
+
+#para{
+    font-size: 1.5em;
+    color: aliceblue;
+    margin-bottom: 1em; /* Space between paragraphs */
+}
+
+#para-1{
+    margin-left: 4em;
+    font-size: 1.8em;
+    color: rgb(2, 255, 78);
+}
+
+.bigger-text{
+    color: red;
+}
+
+.aboutme-img{
+    margin-left: 3em;
+    height: 70vh;
+    width: 36vw;
+    background-image: url("aboutus.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.skills-txt, .projects-txt{
+    text-align: center; /* Center align for consistency */
+    margin-left: 0; /* Remove fixed margin-left */
+    font-size: 3.5em;
+    color: rgb(216, 213, 213);;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 900;
+    margin-bottom: 1em; /* Space below heading */
+}
+
+.skill-section-container {
+    max-width: 1200px;
+    width: 90%; /* Use percentage for better adaptability */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 10px rgb(116, 115, 115), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2em auto; /* Center the container */
+}
+
+@media (min-width: 768px) {
+    .skill-section-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.skill-category h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    text-align: center; /* Center category headings */
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill-item p {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #cfbfbf;
+}
+
+.skill-bar-container {
+    position: relative;
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(to right, #d16e6e, #fd0000);
+    border-radius: 4px;
+    width: 0%;
+    transition: width 1s ease-out;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column for mobile */
+    margin: 0 auto; /* Center the container */
+    gap: 2rem; /* Space between cards */
+    max-width: 1200px;
+    width: 90%; /* Use percentage for better adaptability */
+    padding: 1em 0; /* Add vertical padding */
+}
+@media (min-width: 768px) {
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for tablets and desktops */
+    }
+}
+.project-card {
+    background-color: #2a2a2a; /* Slightly lighter dark background for cards */
+    border: 1px solid #444; /* Border color */
+    border-radius: 0.75rem; /* Rounded corners */
+    overflow: hidden; /* Ensures image corners are rounded */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+.project-image-container {
+    width: 100%;
+    height: 200px; /* Adjusted height for images on smaller screens */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #444; /* Separator for image */
+}
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-position: top;
+    object-fit: cover; /* Changed to cover for better image scaling */
+    display: block;
+}
+.project-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content to expand */
+}
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Space between tags */
+    margin-bottom: 1rem;
+}
+.tag {
+    background-color: #d42929; /* Tag background */
+    color: #e0e0e0; /* Tag text color */
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.375rem; /* Rounded tags */
+    font-size: 0.875rem;
+    white-space: nowrap; /* Prevent tags from breaking */
+}
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #ffffff; /* Brighter title color */
+}
+.project-date {
+    font-size: 0.9rem;
+    color: #b0b0b0; /* Subtler date color */
+    margin-bottom: 1rem;
+}
+.project-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #c0c0c0;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Allows description to take up available space */
+}
+.project-buttons {
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+    margin-top: auto; /* Pushes buttons to the bottom */
+}
+.project-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    flex: 1; /* Buttons take equal width */
+}
+
+
+.resume-area{
+    width:100vw;
+    height:5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em 0; /* Add vertical padding */
+}
+
+.resume-button{
+    border-radius: 0.5em;
+    font-size: 2em; /* Adjusted font size for mobile */
+    padding: 0.5em 1em; /* Adjusted padding */
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #d42929;
+    color: #ffffff;
+    text-decoration: none;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+footer{
+    height: auto; /* Allow height to adjust based on content */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #cfbfbf;
+    padding: 1em 0; /* Add padding for spacing */
+}
+
+.logos{
+    height: auto; /* Allow height to adjust */
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3em;
+    margin-bottom: 1em; /* Space below logos */
+}
+
+.logo1{
+    height: 3em; /* Slightly smaller logos for mobile */
+    width: 3em;
+}
+
+#github{
+    background-image: url("githublogo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#linkedin{
+    background-image: url("linkedinlogo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contact{
+    height: auto; /* Allow height to adjust */
+    width: 90%; /* Use percentage for better adaptability */
+    display: flex;
+    flex-direction: column; /* Stack contact details vertically on mobile */
+    align-items: center;
+    row-gap: 0.5em; /* Space between stacked contact details */
+    justify-content: center;
+    text-align: center;
+}
+
+#phone, #mail{
+    background-image: url("phonenologo.png"); /* You might want to use SVG for better scaling */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#mail{
+    background-image: url("gmaillogo.png");
+}
+
+.logo2{
+    height: 1.5em; /* Smaller icons */
+    width: 1.5em;
+}
+
+.contact1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em; /* Adjust font size */
+    color: #121212;
+}
+
+.details {
+    margin-left: 0.5em; /* Space between icon and text */
+}
+
+/* Fixed Navigation Panel */
+.fixed-nav-panel {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    /* Gradient: left 10% is transparent, rest is black */
+    background: linear-gradient(to right,
+        rgba(0, 0, 0, 0) 0%,
+        #121212 10%,
+        #121212 100%
+    );
+    padding: 15px 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    z-index: 100;
+    width: 100%; /* Make it full width on mobile */
+    justify-content: center; /* Center the links */
+    box-sizing: border-box; /* Include padding in width */
+    flex-wrap: wrap; /* Allow links to wrap */
+}
+
+
+.fixed-nav-panel.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.fixed-nav-panel a {
+    color: antiquewhite;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em; /* Smaller font size for fixed nav */
+    padding: 5px 8px; /* Adjusted padding */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Keep links from breaking */
+}
+
+.fixed-nav-panel a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.section-3, .section-4{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    padding: 1em; /* Add padding for overall section */
+}
+
+.section-2,
+.section-3,
+.section-4,
+.resume-area,
+footer {
+    scroll-margin-top: 3em;
+}
+
+.section-2.fade-in-active,
+.section-3.fade-in-active,
+.section-4.fade-in-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+/* For screens smaller than 768px (common tablet/large phone breakpoint) */
+@media (max-width: 767px) {
+    .heading {
+        font-size: 3em; /* Smaller initial heading for phones */
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .heading-small {
+        font-size: 1.5em; /* Even smaller for scrolled state */
+        /* Changed position for better visibility on smaller screens */
+        top: 0.5em; /* Adjusted to be slightly lower from the very top */
+        left: 0.5em; /* Adjusted to be slightly further from the very left */
+        transform: none; /* Ensure no residual transform issues */
+    }
+
+    .section-1 {
+        flex-direction: column; /* Stack nav and intro vertically */
+        height: auto; /* Allow height to adjust */
+        padding-top: 60px; /* More padding for header when stacked */
+        background-position: 70% center; /* Adjust background image position */
+    }
+
+    .nav-area {
+        display: none; /* Hide nav-area on phone orientation */
+    }
+
+    .intro {
+        width: 90%; /* Take more width */
+        margin: 0 auto; /* Center intro */
+        text-align: center;
+        grid-template-rows: auto; /* Auto height for content */
+        position: static; /* Remove absolute positioning from intro */
+        left: auto;
+        top: auto;
+        transform: none; /* Remove transform */
+        padding-bottom: 2em; /* Padding at bottom of intro */
+        padding-top: 5em; /* Add top padding to intro when nav-area is hidden */
+        max-width: 400px; /* Adjust as needed, prevents text from stretching too wide */
+    }
+
+    .intro-content {
+        /* Ensure content doesn't overflow its container */
+        white-space: normal; /* Allow text to wrap within its container */
+        overflow: hidden; /* Hide overflow if any */
+        text-overflow: ellipsis; /* Add ellipsis if text is too long and still overflows */
+    }
+
+    #first-name {
+        font-size: 2em; /* Slightly smaller to prevent cutoff */
+    }
+
+    #last-name {
+        font-size: 1.2em; /* Slightly smaller to prevent cutoff */
+    }
+
+    #designation {
+        font-size: 0.7em; /* Slightly smaller to prevent cutoff */
+        padding-bottom: 1em; /* Add some space below designation */
+    }
+
+    .section-2 {
+        flex-direction: column; /* Stack about me content vertically */
+        padding: 1em;
+    }
+
+    .about-me-left {
+        width: 100%; /* Full width */
+        padding-right: 0;
+    }
+
+    .about-me-heading {
+        font-size: 2.5em; /* Smaller heading */
+        margin-bottom: 0.5em;
+    }
+
+    .para-area {
+        margin: 0 0.5em; /* Adjust margins */
+    }
+
+    #para {
+        font-size: 1.1em; /* Smaller paragraph text */
+    }
+
+    #para-1 {
+        margin-left: 0; /* Remove left margin */
+        font-size: 1.3em;
+        text-align: center; /* Center "Let's build..." */
+    }
+
+    .aboutme-img {
+        margin: 2em auto 0 auto; /* Center image and add top margin */
+        width: 90%; /* Take more width */
+        height: 40vh; /* Adjust height */
+    }
+
+    .skills-txt, .projects-txt {
+        font-size: 2.5em; /* Smaller headings */
+    }
+
+    .skill-section-container {
+        width: 95%; /* Adjust width */
+        margin: 1em auto;
+        padding: 1rem;
+    }
+
+    .skill-category h2 {
+        font-size: 1.3rem; /* Smaller category heading */
+        margin-bottom: 1rem;
+    }
+
+    .skill-item p {
+        font-size: 1em; /* Smaller skill text */
+    }
+
+    .projects-container {
+        width: 95%; /* Adjust width */
+        margin: 1em auto;
+        padding: 0.5em 0;
+    }
+
+    .project-image-container {
+        height: 180px; /* Slightly smaller project image height */
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+    }
+
+    .project-description {
+        font-size: 0.9em;
+    }
+
+    .resume-button {
+        font-size: 1.5em;
+        padding: 0.7em 1.2em;
+    }
+
+    .logos {
+        column-gap: 1.5em;
+    }
+
+    .logo1 {
+        height: 2.5em;
+        width: 2.5em;
+    }
+
+    .contact {
+        flex-direction: column;
+        row-gap: 0.8em;
+        font-size: 0.9em;
+    }
+
+    .logo2 {
+        height: 1.2em;
+        width: 1.2em;
+    }
+
+    .fixed-nav-panel {
+        flex-direction: row; /* Keep in a row */
+        gap: 5px;
+        padding: 10px 15px;
+        justify-content: flex-start; /* Align links to start */
+        background: #121212;
+        overflow-x: auto; /* Enable horizontal scrolling for links */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    .fixed-nav-panel a {
+        font-size: 0.8em;
+        padding: 3px 6px;
+        flex-shrink: 0; /* Prevent links from shrinking */
+    }
+
+    /* Remove the br tags' effect by setting margin on sections instead */
+    .section-2, .section-3, .section-4, .resume-area, footer {
+        margin-top: 3em;
+    }
+}
+
+/* For even smaller screens (e.g., iPhone 5/SE, older Androids) */
+@media (max-width: 480px) {
+    .heading {
+        font-size: 2.5em;
+        top: 20%;
+    }
+
+    .heading-small {
+        font-size: 1.2em;
+        /* Adjusted further for very small screens */
+        top: 0.3em; /* Closer to the top for more vertical space */
+        left: 0.3em; /* Closer to the left edge */
+    }
+
+    /* nav-area is already hidden by default at max-width: 767px */
+
+    #first-name {
+        font-size: 1.8em; /* Further reduced for very small screens */
+    }
+
+    #last-name {
+        font-size: 1em; /* Further reduced for very small screens */
+    }
+
+    #designation {
+        font-size: 0.6em; /* Further reduced for very small screens */
+    }
+
+    .about-me-heading, .skills-txt, .projects-txt {
+        font-size: 2em;
+    }
+
+    #para {
+        font-size: 1em;
+    }
+
+    #para-1 {
+        font-size: 1.1em;
+    }
+
+    .aboutme-img {
+        height: 35vh;
+    }
+
+    .project-image-container {
+        height: 150px;
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+    }
+
+    .project-description {
+        font-size: 0.85em;
+    }
+
+    .resume-button {
+        font-size: 1.2em;
+        padding: 0.6em 1em;
+    }
+
+    .logos {
+        column-gap: 1em;
+    }
+
+    .logo1 {
+        height: 2em;
+        width: 2em;
+    }
+
+    .contact {
+        font-size: 0.8em;
+    }
+
+    .logo2 {
+        height: 1em;
+        width: 1em;
+    }
+
+    .fixed-nav-panel a {
+        font-size: 0.75em; /* Slightly smaller for very small screens */
+    }
+}
+
+
